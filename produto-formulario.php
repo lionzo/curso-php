@@ -23,11 +23,17 @@ $categorias = listaCategorias($conexao);
                 <td><textarea name="descricao" class="form-control" rows="3"></textarea></td>
             </tr>
             <tr>
+                <td></td>
+                <td><input type="checkbox" name="usado" value="true">Usado</td>
+            </tr>
+            <tr>
                 <td>Categorias</td>
                 <td>
+                    <select name="categoria_id" class="form-control">
                     <?php foreach($categorias as $categoria): ?> 
-                    <input type="radio" name="categoria_id" value="<?=$categoria['id']?>"><?= utf8_encode($categoria['nome'])?> </br>
+                    <option value="<?=$categoria['id']?>"><?= utf8_encode($categoria['nome'])?> </br>
                     <?php endforeach ?>
+                    </select>
                 </td>
             </tr>
 
